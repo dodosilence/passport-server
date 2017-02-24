@@ -1,0 +1,7 @@
+const http = require('http');
+const app = require('../core/app')
+const config = require('../config')
+process.ENV = 'DEV'
+http.createServer(app.callback()).listen(config.server.port, () => {
+    console.info(`boot success at ${config.server.port}`, 'boot')
+});
